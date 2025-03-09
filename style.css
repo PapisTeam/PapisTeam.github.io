@@ -1,58 +1,148 @@
-/* Estilos generales */
+/* General */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-    text-align: center;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
 }
 
-/* Estilo del contenedor */
 .container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
+  margin-top: 50px;
+  padding: 0 20px;
 }
 
-/* Logo */
-.logo {
-    width: 200px;
-    margin: 20px 0;
-}
-
-/* Título */
+/* Título principal con estilo 3D */
 h1 {
-    font-size: 24px;
-    margin-bottom: 20px;
-    color: #333;
+  font-size: 3.5rem;
+  color: #d32f2f; /* Color rojo para las letras */
+  background-color: #000; /* Fondo negro */
+  padding: 20px 40px;
+  border-radius: 15px; /* Bordes suaves */
+  border: 3px solid #d32f2f; /* Borde rojo */
+  text-transform: uppercase; /* Convertir texto a mayúsculas */
+  letter-spacing: 5px; /* Espaciado entre letras */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Sombra para efecto 3D */
+  display: inline-block;
+  transition: all 0.3s ease-in-out; /* Transición suave */
 }
 
-/* Contenedor de los archivos */
-#fileList {
-    margin-top: 30px;
-    padding: 10px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    min-height: 100px;
+h1:hover {
+  transform: translateY(-5px); /* Eleva el título al pasar el mouse */
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.6); /* Aumenta la sombra en hover */
 }
 
-/* Botón de acceso */
-button {
-    background-color: #000;
-    color: #fff;
-    font-size: 16px;
+/* Botones */
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap; /* Permite que los botones se acomoden en varias filas si es necesario */
+  margin-top: 40px;
+}
+
+.access-btn {
+  font-size: 1.2rem;
+  padding: 15px 30px;
+  background-color: #d32f2f;
+  color: white;
+  border: 2px solid #b71c1c;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out; /* Transición suave */
+}
+
+.access-btn:hover {
+  background-color: #b71c1c;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3); /* Aumenta la sombra */
+  transform: translateY(-4px); /* Eleva el botón */
+}
+
+.access-btn:active {
+  transform: translateY(0); /* Vuelve a su posición original cuando se presiona */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Vuelve la sombra a su tamaño original */
+}
+
+/* Estilo de los botones de la web */
+.access-btn {
+  background-color: #1e88e5; /* Azul más fuerte para la web */
+  border: 2px solid #1565c0;
+}
+
+.access-btn:hover {
+  background-color: #1565c0;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+.access-btn:active {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Añadir espaciado en la parte inferior */
+footer {
+  margin-top: 50px;
+}
+
+/* Media Queries - Hacer la interfaz responsive */
+
+/* Pantallas grandes */
+@media (min-width: 768px) {
+  .access-btn {
+    font-size: 1.4rem;
+    padding: 15px 40px;
+  }
+
+  h1 {
+    font-size: 3.5rem;
+  }
+
+  .logo-container img {
+    width: 250px; /* Aumenta el tamaño del logo */
+  }
+
+  .button-container {
+    gap: 30px;
+  }
+}
+
+/* Pantallas medianas (tablets) */
+@media (max-width: 767px) {
+  .access-btn {
+    font-size: 1.2rem;
+    padding: 12px 25px;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  .logo-container img {
+    width: 200px;
+  }
+
+  .button-container {
+    gap: 15px;
+  }
+}
+
+/* Pantallas pequeñas (móviles) */
+@media (max-width: 480px) {
+  .access-btn {
+    font-size: 1rem;
     padding: 10px 20px;
-    border: none;
-    border-radius: 8px;
-    box-shadow: 3px 3px 10px rgba(255, 0, 0, 0.5);
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
+  }
 
-button:hover {
-    box-shadow: 3px 3px 15px rgba(255, 0, 0, 0.7);
-    background-color: #ff0000;
+  h1 {
+    font-size: 2rem;
+  }
+
+  .logo-container img {
+    width: 150px;
+  }
+
+  .button-container {
+    flex-direction: column; /* Los botones se apilan verticalmente */
+    gap: 20px;
+  }
 }

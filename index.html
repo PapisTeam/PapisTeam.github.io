@@ -1,29 +1,103 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Papi's Team - Dropbox</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Papi's Team</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: white;
+        color: black;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+    }
 
-    <!-- Cargar el SDK de Dropbox desde CDN -->
-    <script src="https://unpkg.com/dropbox/dist/Dropbox-sdk.min.js"></script>
+    .title {
+        font-size: 36px;
+        color: red;
+        background-color: black;
+        display: inline-block;
+        padding: 10px 20px;
+        border-radius: 10px;
+        text-shadow: 2px 2px 5px #000;
+        margin-bottom: 20px;
+    }
 
-    <!-- Vincular al archivo CSS -->
-    <link rel="stylesheet" href="style.css">
+    .logo {
+        width: 250px;
+        height: auto;
+        margin-bottom: 20px;
+    }
+
+    .container {
+        text-align: center;
+        max-width: 500px;
+    }
+
+    .button-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas */
+        gap: 15px;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .access-btn {
+        font-size: 18px;
+        color: black;
+        background-color: red;
+        border: none;
+        padding: 15px 30px;
+        border-radius: 10px;
+        cursor: pointer;
+        text-transform: uppercase;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        transition: all 0.3s ease;
+    }
+
+    .access-btn:hover {
+        background-color: #d32f2f;
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    }
+
+    .access-btn:active {
+        transform: translateY(0);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    @media (max-width: 600px) {
+        .button-grid {
+            grid-template-columns: 1fr; /* En pantallas pequeñas, los botones irán en una sola columna */
+        }
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <!-- Logo de la app -->
-        <img src="Papi`s Team.jpg" alt="Logo de Papi's Team" class="logo">
 
-        <!-- Título -->
-        <h1>Papi's Team</h1>
+  <h1 class="title">Papi's Team</h1>
 
-        <!-- Contenedor para mostrar archivos -->
-        <div id="fileList"></div>
+  <div class="logo-container">
+    <img src="Papi's Team.jpg" alt="Logo" class="logo">
+  </div>
+
+  <div class="container">
+    <!-- Botones organizados en dos columnas -->
+    <div class="button-grid">
+      <button class="access-btn" onclick="window.location.href='https://www.dropbox.com/scl/fo/bvn3ynrmbgcv7l4yx9f2g/AH1OFd_K739pb-V5IfQr2LY?rlkey=xq4xq3qj5jj56emx7p9it5b0h&st=kflfsxtu&dl=0'">Partidos</button>
+      <button class="access-btn" onclick="window.location.href='https://www.dropbox.com/scl/fo/1h5xzuazx48gmcc7hcvym/AMGA_pmaXEMYr_SPRzlnORI?rlkey=hjgpwcgvirano02nqjg58h8qa&st=k2nsjua4&dl=0'">Actas</button>
+      <button class="access-btn" onclick="window.location.href='https://www.dropbox.com/scl/fo/pdos4unyb0yia97xw648g/AHysCyLHrbhjqcjFIXx0-ww?rlkey=qfdknf47ft933wnwkftvqr2u5&st=0jz2khcb&dl=0'">Estadísticas</button>
+      <button class="access-btn" onclick="window.location.href='https://www.gisaski.eus/es/competicion/resultados-clasificaciones/?temporada=27&referencia=560&categoria=10'">Gisaski</button>
     </div>
+  </div>
 
-    <!-- Vincular el archivo de JavaScript -->
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
